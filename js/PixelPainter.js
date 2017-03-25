@@ -1,3 +1,5 @@
+//create Grid to color.  Append buttons to Grid.  Buttons are the best!
+
 var pixgrid = document.getElementById('pixelPainter');
 var colorGrid = document.getElementById('pixelPainter');
 
@@ -33,34 +35,22 @@ colorButtons.style.height = '200px';
 colorGrid.appendChild(colorButtons);
 
 var colorbutt = 12;
+//Color Wheel array to iterate through.
+var colorsOfTheRainbow = ["Red", "Green", "Blue", "Yellow", "Black", "Teal", "Purple", "Pink", "Orange", "Grey", "Lime", "White" ];
+var paint = null;
 
-var colorsOfTheRainbow = ["Red", "Green", "Blue", "Yellow", "Black", "Blue", "Purple", "Pink", "Orange", "Grey", "White" ];
-
+//creating color buttons
 for(var i = 0; i <colorbutt; i++) {
   var buttoncolor = document.createElement('button');
-  buttoncolor.id =  "clr" + i;
+  buttoncolor.id =  colorsOfTheRainbow[i];
   buttoncolor.style.background = colorsOfTheRainbow[i];
   buttoncolor.style.width  = '50px';
   buttoncolor.style.height = '50px';
   buttoncolor.addEventListener('click', function(event) {
    console.log(event.target.id);
+   paint = event.target.id;
+   console.log(paint);  
   });
   colorButtons.appendChild(buttoncolor);
 }
-
-var redButton = document.getElementById('clr0');
-redButton.style.background = "Red";
-
-
-
-// for( var i = 1; i < buttnum; i++) {
-//   var button = document.createElement('button');
-//   button.id = i;
-//   button.innerHTML = i;
-//   button.addEventListener('click', function(event) {
-//     price.innerHTML += event.target.innerHTML;
-
-
-
-//   });
-//   whiteBox.appendChild(button);
+// Creating paint variable to color with.
