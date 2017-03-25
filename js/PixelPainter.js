@@ -11,7 +11,7 @@ whiteBox.style.width = '500px';
 whiteBox.style.height = '500px';
 pixgrid.appendChild(whiteBox);
 
-var buttnum = 64;
+var buttnum = 400;
 
 
 for(var i = 0; i < buttnum; i++) {
@@ -19,13 +19,14 @@ for(var i = 0; i < buttnum; i++) {
   button.id = i;
   //button.innerHTML = button.id;
   button.style.background = "white";
-  button.style.width = '60px';
-  button.style.height = '60px';
+  button.style.width = '25px';
+  button.style.height = '25px';
+  // button.addEventListener('mouseover', function(event){
+  //   event.target.style.background = paint;
+  //   console.log(button.id);
+  // });
   button.addEventListener('click', function(event) {
-    console.log(paint);
-    console.log(event.target.style.background);
-    //console.log(button.id);
-    event.target.style.background = paint;
+    event.target.style.background = paint;  
     button.style.background = event.target.id;
   });
 whiteBox.appendChild(button);
