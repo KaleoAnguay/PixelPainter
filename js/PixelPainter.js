@@ -2,6 +2,7 @@
 
 var pixgrid = document.getElementById('pixelPainter');
 var colorGrid = document.getElementById('pixelPainter');
+var paint = null;
 
 var whiteBox = document.createElement('div');
 //
@@ -16,12 +17,16 @@ var buttnum = 64;
 for(var i = 0; i < buttnum; i++) {
   var button = document.createElement('button');
   button.id = i;
-  button.innerHTML = button.id;
+  //button.innerHTML = button.id;
   button.style.background = "white";
   button.style.width = '60px';
   button.style.height = '60px';
   button.addEventListener('click', function(event) {
-    console.log(event.target.id);
+    console.log(paint);
+    console.log(event.target.style.background);
+    //console.log(button.id);
+    event.target.style.background = paint;
+    button.style.background = event.target.id;
   });
 whiteBox.appendChild(button);
 }
@@ -37,7 +42,6 @@ colorGrid.appendChild(colorButtons);
 var colorbutt = 12;
 //Color Wheel array to iterate through.
 var colorsOfTheRainbow = ["Red", "Green", "Blue", "Yellow", "Black", "Teal", "Purple", "Pink", "Orange", "Grey", "Lime", "White" ];
-var paint = null;
 
 //creating color buttons
 for(var i = 0; i <colorbutt; i++) {
