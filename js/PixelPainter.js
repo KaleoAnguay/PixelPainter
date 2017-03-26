@@ -1,4 +1,5 @@
 //create Grid to color.  Append buttons to Grid.  Buttons are the best!
+//painter set
 
 var pixgrid = document.querySelector('#pixelPainter');
 var paint = 'white';
@@ -96,13 +97,11 @@ for(var i = 0; i<randomButt; i++) {
 var everything = whiteBox.querySelectorAll('button');
 
 instant0.innerHTML = "Color All";
+instant0.style.background = "white";
 instant1.innerHTML = "Random Color";
 
-instant0.addEventListener('click', function(event) {
-  everything.forEach(painted);
+instant0.addEventListener('click', function(event){
+for(i = 0; i<everything.length; i++){
+  everything[i].style.background = paint;
+} 
 });
-
-
-
-
-
