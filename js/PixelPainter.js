@@ -92,6 +92,7 @@ for(var i = 0; i<randomButt; i++) {
   });
     colorAll.appendChild(instColor);
 }
+
 //Query selector all returns an array.
 //loop through it in order to access the buttons.
 var everything = whiteBox.querySelectorAll('button');
@@ -103,5 +104,5 @@ instant1.innerHTML = "Random Color";
 instant0.addEventListener('click', function(event){
 for(i = 0; i<everything.length; i++){
   everything[i].style.background = paint;
-} 
+}
 });
