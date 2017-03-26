@@ -97,6 +97,14 @@ for(var i = 0; i<randomButt; i++) {
 //loop through it in order to access the buttons.
 var everything = whiteBox.querySelectorAll('button');
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 instant0.innerHTML = "Color All";
 instant0.style.background = "white";
 instant1.innerHTML = "Random Color";
@@ -105,4 +113,10 @@ instant0.addEventListener('click', function(event){
 for(i = 0; i<everything.length; i++){
   everything[i].style.background = paint;
 }
+});
+
+instant1.addEventListener('click', function(event){
+  instant1.style.background = getRandomColor();
+  paint = instant1.style.background;
+  console.log(paint);
 });
