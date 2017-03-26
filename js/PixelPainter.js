@@ -21,7 +21,7 @@ var isMouseDown = false;
 for(var i = 0; i < buttnum; i++) {
   var button = document.createElement('button');
   button.id = i;
-  //button.innerHTML = button.id;
+  // button.placeholder = 'o';
   button.style.background = "transparent";
   button.style.width = '25px';
   button.style.height = '25px';
@@ -48,13 +48,13 @@ for(var i = 0; i < buttnum; i++) {
 var colorButtons = document.createElement('div');
 
 colorButtons.id = 'color';
-colorButtons.style.width = '200px';
-colorButtons.style.height = '200px';
+colorButtons.style.width = '50px';
+colorButtons.style.height = '50px';
 pixgrid.appendChild(colorButtons);
 
-var colorbutt = 12;
+var colorbutt = 20;
 //Color Wheel array to iterate through.
-var colorsOfTheRainbow = ["Red", "Green", "Blue", "Yellow", "Black", "Teal", "Purple", "Pink", "Orange", "Grey", "transparent", "White" ];
+var colorsOfTheRainbow = ["Red", "Green", "Blue", "Yellow", "Black", "Teal", "Purple", "Pink", "Orange", "Grey", "transparent", "White","" ];
 
 //creating color buttons
 for(var i = 0; i <colorbutt; i++) {

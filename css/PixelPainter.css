@@ -1,3 +1,9 @@
 body{
 	background-repeat: no-repeat;
 }
+
+#color{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
