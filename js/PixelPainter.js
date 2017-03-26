@@ -66,7 +66,7 @@ for(var i = 0; i <colorbutt; i++) {
   buttoncolor.addEventListener('click', function(event) {
    console.log(event.target.id);
    paint = event.target.id;
-   console.log(paint);  
+   console.log(paint);
   });
   colorButtons.appendChild(buttoncolor);
 }
