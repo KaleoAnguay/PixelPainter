@@ -1,12 +1,11 @@
 //create Grid to color.  Append buttons to Grid.  Buttons are the best!
-//painter set
 
 var pixgrid = document.getElementById('pixelPainter');
 var colorGrid = document.getElementById('pixelPainter');
 var paint = null;
 
 var whiteBox = document.createElement('div');
-
+//
 whiteBox.id = 'Whitebox';
 whiteBox.style.width = '500px';
 whiteBox.style.height = '500px';
@@ -18,30 +17,22 @@ var buttnum = 400;
 for(var i = 0; i < buttnum; i++) {
   var button = document.createElement('button');
   button.id = i;
+  //button.innerHTML = button.id;
   button.style.background = "white";
   button.style.width = '25px';
   button.style.height = '25px';
-  var flag = 0;
-  button.addEventListener("mousedown", function(){
-    flag = 0;
-    // console.log(event.target.style.background = paint);
-  }, false);
-  button.addEventListener("mousemove", function(){
-    flag = 1;
-    // console.log(event.target.style.background = paint);
-  }, false);
-  button.addEventListener("mouseup", function(){
-    if(flag === 0){
-      console.log(flag);
-    }
-    else if(flag === 1){
-        event.target.style.background = paint;
-    }
-}, false);
+  // button.addEventListener('mouseover', function(event){
+  //   event.target.style.background = paint;
+  //   console.log(button.id);
+  // });
+  button.addEventListener('click', function(event) {
+    event.target.style.background = paint;  
+    button.style.background = event.target.id;
+  });
 whiteBox.appendChild(button);
 }
+//button1.background = "red";
 
-//Color buttons div
 var colorButtons = document.createElement('div');
 
 colorButtons.id = 'color';
@@ -49,8 +40,8 @@ colorButtons.style.width = '200px';
 colorButtons.style.height = '200px';
 colorGrid.appendChild(colorButtons);
 
-//Color Wheel array to iterate through and number of buttons
 var colorbutt = 12;
+//Color Wheel array to iterate through.
 var colorsOfTheRainbow = ["Red", "Green", "Blue", "Yellow", "Black", "Teal", "Purple", "Pink", "Orange", "Grey", "Lime", "White" ];
 
 //creating color buttons
@@ -63,7 +54,7 @@ for(var i = 0; i <colorbutt; i++) {
   buttoncolor.addEventListener('click', function(event) {
    console.log(event.target.id);
    paint = event.target.id;
-   console.log(paint);
+   console.log(paint);  
   });
   colorButtons.appendChild(buttoncolor);
 }
