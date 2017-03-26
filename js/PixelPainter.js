@@ -13,6 +13,7 @@ whiteBox.style.height = '500px';
 pixgrid.appendChild(whiteBox);
 
 var buttnum = 400;
+var isMouseDown = false;
 
 
 for(var i = 0; i < buttnum; i++) {
@@ -21,24 +22,23 @@ for(var i = 0; i < buttnum; i++) {
   button.style.background = "white";
   button.style.width = '25px';
   button.style.height = '25px';
-  var flag = 0;
-  button.addEventListener("mousedown", function(){
-    flag = 0;
+
+  button.addEventListener("mousedown", function(event){
+    isMouseDown = true;
     // console.log(event.target.style.background = paint);
   }, false);
-  button.addEventListener("mousemove", function(){
-    flag = 1;
-    // console.log(event.target.style.background = paint);
+
+  button.addEventListener("mousemove", function(event){
+    if(isMouseDown === true) {
+      event.target.style.background = paint;
+    }
   }, false);
-  button.addEventListener("mouseup", function(){
-    if(flag === 0){
-      console.log(flag);
-    }
-    else if(flag === 1){
-        event.target.style.background = paint;
-    }
-}, false);
-whiteBox.appendChild(button);
+
+  button.addEventListener("mouseup", function(event){
+    isMouseDown = false;
+  }, false);
+
+  whiteBox.appendChild(button);
 }
 
 //Color buttons div
